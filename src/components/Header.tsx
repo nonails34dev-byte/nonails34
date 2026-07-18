@@ -111,6 +111,12 @@ export function Header() {
               </a>
             ))}
             <a
+              href="/login"
+              className="rounded-full border border-brand-burgundy/20 px-5 py-2.5 text-sm font-medium text-brand-burgundy transition-all hover:-translate-y-0.5 hover:border-brand-burgundy/40 hover:bg-brand-cream/70"
+            >
+              Se connecter
+            </a>
+            <a
               href="#contact"
               className="magnetic-link premium-button inline-block rounded-full bg-brand-burgundy px-8 py-3 text-sm font-medium text-brand-cream shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
@@ -157,6 +163,13 @@ export function Header() {
             className="mobile-link premium-button mt-7 rounded-full bg-brand-burgundy px-10 py-4 font-medium text-brand-cream shadow-lg transition-all"
           >
             Réserver un rendez-vous
+          </a>
+          <a
+            href="/login"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="mobile-link rounded-full border border-brand-burgundy/25 px-8 py-3 font-medium text-brand-burgundy transition-all hover:bg-brand-blush"
+          >
+            Se connecter / créer un compte
           </a>
         </nav>
       </div>

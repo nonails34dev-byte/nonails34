@@ -9,8 +9,27 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { SmoothScroll } from './components/SmoothScroll';
 import { CustomCursor } from './components/CustomCursor';
+import { AdminPanel } from './components/AdminPanel';
+import { AuthPage } from './components/AuthPage';
+import { ClientSpace } from './components/ClientSpace';
 
 function App() {
+  const signedRole = sessionStorage.getItem('atelier-role');
+
+  if (window.location.pathname.startsWith('/login')) {
+    return <AuthPage />;
+  }
+
+  if (window.location.pathname.startsWith('/admin')) {
+    if (signedRole !== 'admin') return <AuthPage />;
+    return <AdminPanel />;
+  }
+
+  if (window.location.pathname.startsWith('/client')) {
+    if (signedRole !== 'client') return <AuthPage />;
+    return <ClientSpace />;
+  }
+
   return (
     <SmoothScroll>
       <CustomCursor />
